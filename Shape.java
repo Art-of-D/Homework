@@ -8,14 +8,6 @@ public class Shape implements Namable{
     }
 }
 
-/*enum ShapeEnter {
-    square,
-    circle,
-    quad,
-    rhombus,
-    pyramid;
-}*/
-
 class ShapeFormatter {
     public String getShape(String answer) throws IllegalArgumentException{
         switch (answer) {

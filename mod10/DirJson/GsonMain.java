@@ -1,22 +1,22 @@
 package DirJson;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class GsonMain {
     public static void main(String[] args) throws IOException {
-        File file = new File("/Users/art_of_d/Java/mod10/DirJson/file.txt");
+        File file = new File("/Users/art_of_d/Documents/GitHub/Homework/mod10/DirJson/file.txt");
+        System.out.println(file);
         ArrayList<Character> chars = new ArrayList<>();
-
+        if (!(file.exists())){
+            file.createNewFile();
+        }
         try (FileReader reader = new FileReader(file)) {
             int i = -1;
             while ((i = reader.read()) != -1) {
@@ -70,11 +70,11 @@ public class GsonMain {
         Gson gson = new Gson();
         String gsonArr = gson.toJson(user);
 
-        File fileJS = new File("/Users/art_of_d/Java/mod10/DirJson/user.json");
+        File fileJS = new File("/Users/art_of_d/Documents/GitHub/Homework/mod10/DirJson/user.json");
         if (!fileJS.exists()){
             fileJS.createNewFile();
         }
-        try(FileWriter fileWriter = new FileWriter("/Users/art_of_d/Java/mod10/DirJson/user.json")){
+        try(FileWriter fileWriter = new FileWriter("/Users/art_of_d/Documents/GitHub/Homework/mod10/DirJson/user.json")){
             fileWriter.write(gsonArr);
             fileWriter.close();
         }

@@ -11,7 +11,7 @@ class OddFilter{
 
         Stream<String> oddF = names
                 .stream()
-                .filter(name -> (names.indexOf(name) % 2) == 0);
+                .filter(name -> (names.indexOf(name) % 2) == 1);
 
         List<String> filteredNames = oddF.collect(Collectors.toList());
         System.out.println(filteredNames);

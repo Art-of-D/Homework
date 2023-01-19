@@ -2,7 +2,6 @@ package task5;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class Test {
@@ -21,14 +20,5 @@ class Test {
 
         List<String> stream = Mixer.zip(first, second).toList();
         System.out.println(stream);
-        /*String stream = Mixer.zip(first,second)
-                        .collect(Collectors.joining(","));*/
-
-        /*String concat = Mixer.zip(first, second)
-
-                .collect(Collectors.joining(", "));
-        System.out.println(concat);
-*/
-
     }
 }

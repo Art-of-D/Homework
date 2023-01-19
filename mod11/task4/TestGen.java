@@ -1,6 +1,5 @@
 package task4;
 
-import task4.Generator;
 
 import java.util.Scanner;
 import java.util.stream.Stream;

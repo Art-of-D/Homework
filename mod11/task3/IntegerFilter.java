@@ -18,8 +18,6 @@ public class IntegerFilter {
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
         System.out.println(out);
-
-
     }
 
 }

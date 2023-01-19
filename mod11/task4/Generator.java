@@ -1,13 +1,11 @@
 package task4;
 
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class Generator {
     public long a;
     public int c;
     public double m;
-
     private long n;
 
     public Generator(int n) {
@@ -33,8 +31,4 @@ public class Generator {
     public long core(int n){
         return (long) ((1 * (a * n + c)) % m);
     }
-
-
-
-
 }

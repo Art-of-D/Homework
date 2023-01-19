@@ -11,16 +11,24 @@ class Test {
         List<String> names2 = Arrays.asList("John", "Bill", "Ivan", "Peter", "Martin", "Anna");
         Stream<String> first = names
                 .stream()
-                .filter(name -> (names.indexOf(name) % 2) == 0);
+                .filter(name -> (names.indexOf(name) % 2) == 1);
 
         Stream<String> second = names2
                 .stream()
                 .map(name -> name.toUpperCase())
                 .sorted();
 
-        Stream<String> concat = Mixer.zip(first, second)
-                .sorted();
-        List<String> filteredNames = concat.collect(Collectors.toList());
-        System.out.println(filteredNames);
+
+        List<String> stream = Mixer.zip(first, second).toList();
+        System.out.println(stream);
+        /*String stream = Mixer.zip(first,second)
+                        .collect(Collectors.joining(","));*/
+
+        /*String concat = Mixer.zip(first, second)
+
+                .collect(Collectors.joining(", "));
+        System.out.println(concat);
+*/
+
     }
 }

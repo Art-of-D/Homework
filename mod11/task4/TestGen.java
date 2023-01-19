@@ -1,4 +1,4 @@
-package task1;
+package task4;
 
 import task4.Generator;
 

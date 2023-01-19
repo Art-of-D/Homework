@@ -18,7 +18,7 @@ public class Generator {
         this.c = in.nextInt();
         System.out.println("Please enter 'm' number!");
         this.m = in.nextDouble();
-        if (a == 0) {
+        if (a == 0 || c == 0 || m == 0) {
             this.a = 25214903917L;
             this.c = 11;
             this.m = Math.pow(2, 48);

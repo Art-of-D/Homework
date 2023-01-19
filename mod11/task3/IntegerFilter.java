@@ -1,6 +1,5 @@
 package task3;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,14 +9,15 @@ public class IntegerFilter {
     public static void main(String[] args) {
 
         List<String> items = Arrays.asList("1, 2, 0", "4, 5");
-        ArrayList<String> outitems = new ArrayList<>();
-        for (String item : items) {
-            outitems.addAll(List.of(item.split(", ")));
-        }
-        Stream<String> streamout = (Stream<String>) outitems
+
+        String out = items
                 .stream()
-                .sorted();
-        System.out.println(streamout.collect(Collectors.toList()));
+                .flatMap(item->Stream.of(item.split(", ")))
+                .map(Integer::parseInt)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", "));
+        System.out.println(out);
 
 
     }

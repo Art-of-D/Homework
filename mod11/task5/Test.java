@@ -10,7 +10,8 @@ class Test {
         List<String> names2 = Arrays.asList("John", "Bill", "Ivan", "Peter", "Martin", "Anna");
         Stream<String> first = names
                 .stream()
-                .filter(name -> (names.indexOf(name) % 2) == 1);
+                .filter(name -> names.indexOf(name) % 2 == 0)
+                .map(name -> (names.indexOf(name) + 1) + ". " + name);
 
         Stream<String> second = names2
                 .stream()
